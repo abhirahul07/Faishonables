@@ -1,0 +1,3 @@
+for authentication during signup to activate the account by clicking the the link sent in email is not done- we have to just uncomment the line in signup.html page and url.py in authentication pge. 
+
+for now i have just made all the email status active as i have not a veriifed gmail accout 

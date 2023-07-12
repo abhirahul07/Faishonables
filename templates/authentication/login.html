@@ -1,0 +1,45 @@
+{% extends 'authentication/baseauth.html' %}
+{% block title%}Login{% endblock title%}
+{% block content %}
+
+
+<br><br><br><br>
+
+<div class="card bg-light p-4">
+
+  {% for message in messages %}
+<div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+  <strong>{{message}}</strong>
+  <button typr="button" class="btn-close" data-bs-dismiss="alert"
+  aria-label="Close"></button>
+</div>
+  {% endfor %}
+
+  <h2 class="text-dark ">Log In<h2>
+
+
+    <form action="/auth/login/"method="post">{% csrf_token %}
+      
+
+      <label class="text-dark"for="email"><h6>Email</h6></label>
+      <div class="form-group">
+        <input type="email "class="form-control"id="email"name="email" required>
+      </div>
+      <label class="text-dark "for="pass1"><h6>Password</h6></label>
+      <div class="form-group">
+        <input type="password"class="form-control"id="pass1"name="pass1" required>
+      </div>
+      
+      <br>
+      
+      <button type="submit"class="btn btn-dark">LogIn</button>
+
+      
+      <h5 class="text-black p-0"> &nbsp &nbsp &nbsp New User? <a href="/auth/signup/"> Sign Up &nbsp &nbsp &nbsp</a></h5>
+      
+    </form>
+
+</div>
+
+
+ {% endblock content %}
